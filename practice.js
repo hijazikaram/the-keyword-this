@@ -24,7 +24,13 @@
   //getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
 
     //Code Here
-
+var user = {
+  username: 'khijazi',
+  email: 'hijazi@gmail.com',
+  getUsername: function () {
+    return this.username
+  }
+}
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
 
 
@@ -32,6 +38,16 @@
 
 
 // Write the function definitions which will make the following function invocations function properly.
+var Car = function(company, model, year) {
+  this.company = company;
+  this.model = model;
+  this.year = year;
+  this.move = 0;
+  this.moveCar = function () {
+    return this.move += 10;
+  }
+
+}
 
   //Function Invocations Here
 
@@ -43,8 +59,6 @@ mustang.moveCar(); //increments mustang' move property by 10. Returns the new mo
 
 //Hint, you'll need to write a moveCar function which is added to every object that is being returned from the Car function. You'll also need to use the 'this' keyword properly in order to make sure you're invoking moveCar on the right object (prius vs mustang).
 
-
-
 //Continuation of previous problem
 
 var getYear = function(){
@@ -55,7 +69,7 @@ var getYear = function(){
 
 //Note(no tests)
   //Code Here
-
+getYear(prius,mustang);
 
 //New Problem
 
